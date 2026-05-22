@@ -1,0 +1,35 @@
+# --- Machine Learning / AI ---
+mlartifacts/
+mlflow.db
+openvino_cache/
+results/
+lightning_logs/
+
+# --- Data & Samples ---
+# Exclude datasets and sample image folders
+# crack/
+hazelnut/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Miscellaneous ---
+kernel.errors.txt
+*.log

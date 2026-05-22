@@ -1,0 +1,60 @@
+# anomalib_advanced/config/default.yaml
+
+# ==============================================================================
+# Data Configuration
+# ==============================================================================
+data:
+  name: hazelnut
+  root: ../hazelnut
+  normal_dir: train/good
+  normal_test_dir: test/good
+  abnormal_dir:
+    - test/crack
+    - test/cut
+    - test/hole
+    - test/print
+  image_size: [256, 256]
+  train_batch_size: 32
+  test_batch_size: 32
+  num_workers: 0  # Set to 0 on Windows to avoid multi-processing socket/pickle overhead
+
+# ==============================================================================
+# Model Configuration
+# ==============================================================================
+model:
+  name: patchcore  # Options: patchcore, padim
+  backbone: resnet18  # E.g., resnet18, wide_resnet50_2
+  # Patchcore specific settings
+  coreset_sampling_ratio: 0.005  # Ratio of samples in memory bank (e.g. 0.005 for 0.5%)
+  num_neighbors: 9  # Number of neighbors for coreset search
+  # Padim specific settings (used if model.name is padim)
+  layers:
+    - layer1
+    - layer2
+    - layer3
+
+# ==============================================================================
+# Training and Engine Configuration
+# ==============================================================================
+engine:
+  max_epochs: 1
+  devices: 0  # 0 for CPU, 1 for GPU, etc.
+  accelerator: cpu  # cpu, gpu, auto
+
+# ==============================================================================
+# MLflow Tracking & Visualizations
+# ==============================================================================
+mlflow:
+  tracking_uri: "http://127.0.0.1:5000"
+  experiment_name: "Hazelnut_Anomaly_Detection_Advanced"
+  run_name: "Patchcore_Training_Run"
+  log_images: true
+  log_models: true
+  max_visualizations: 20  # Max number of prediction overlay collages to upload to MLflow
+
+# ==============================================================================
+# Export Options for Production Deployment
+# ==============================================================================
+export:
+  export_type: OPENVINO  # OPENVINO, ONNX, or TORCH
+  export_root: "./results/exported"
