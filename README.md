@@ -113,7 +113,7 @@ The API will be available at `http://localhost:8000`.
 You can test the `/predict` endpoint using `curl`:
 
 ```bash
-curl -X POST "http://localhost:8000/predict" -F "file=@./crack/000.png"
+curl.exe -X POST "http://localhost:8000/predict" -F "file=@./crack/000.png"
 ```
 
 **Response Example:**
