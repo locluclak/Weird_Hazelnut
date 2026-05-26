@@ -37,7 +37,7 @@ model:
 # Training and Engine Configuration
 # ==============================================================================
 engine:
-  max_epochs: 1
+  max_epochs: 3
   devices: 0  # 0 for CPU, 1 for GPU, etc.
   accelerator: cpu  # cpu, gpu, auto
 

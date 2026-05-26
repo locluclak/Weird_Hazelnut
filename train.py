@@ -148,7 +148,11 @@ def main(args):
             image_paths = to_list_or_array(get_batch_field(batch, "image_path"))
             pred_scores = to_list_or_array(get_batch_field(batch, "pred_score"))
             pred_labels = to_list_or_array(get_batch_field(batch, "pred_label"))
-            gt_labels = to_list_or_array(get_batch_field(batch, "label"))
+            gt_labels = to_list_or_array(get_batch_field(batch, "gt_label"))
+            
+            # Fallback for older versions if gt_label is missing
+            if not gt_labels and get_batch_field(batch, "label") is not None:
+                gt_labels = to_list_or_array(get_batch_field(batch, "label"))
             
             raw_images = get_batch_field(batch, "image")
             raw_heatmaps = get_batch_field(batch, "anomaly_map")

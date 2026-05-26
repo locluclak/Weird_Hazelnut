@@ -27,13 +27,13 @@ This repository does **not** include the dataset. You must download the MVTec Ha
 data/
 └── hazelnut/
     ├── train/
-    │   └── good/
+    │   └── good/ 391 images
     └── test/
-        ├── good/
-        ├── crack/
-        ├── cut/
-        ├── hole/
-        └── print/
+        ├── good/ 40 images
+        ├── crack/ 18 images
+        ├── cut/ 17 images
+        ├── hole/ 18 images
+        └── print/ 17 images
 ```
 Update the path in `config/default.yaml` under `data.root` to point to your `hazelnut` folder.
 

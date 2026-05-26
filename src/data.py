@@ -74,6 +74,7 @@ def get_datamodule(config: dict) -> Folder:
     Build the Anomalib Folder Datamodule using config parameters.
     """
     data_config = config["data"]
+    abnormal_dir = data_config["abnormal_dir"]
     
     # Map configurations safely to the Folder datamodule signature
     datamodule = Folder(
@@ -81,7 +82,7 @@ def get_datamodule(config: dict) -> Folder:
         root=data_config["root"],
         normal_dir=data_config["normal_dir"],
         normal_test_dir=data_config["normal_test_dir"],
-        abnormal_dir=data_config["abnormal_dir"],
+        abnormal_dir=abnormal_dir,
         train_batch_size=data_config.get("train_batch_size", 32),
         eval_batch_size=data_config.get("test_batch_size", 32),  # mapping test_batch_size to eval_batch_size
         num_workers=data_config.get("num_workers", 0)
