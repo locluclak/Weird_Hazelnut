@@ -37,6 +37,21 @@ data/
 ```
 Update the path in `config/default.yaml` under `data.root` to point to your `hazelnut` folder.
 
+### 3. Data Versioning (DVC)
+We use DVC to track dataset versions without bloating the Git repository.
+
+```bash
+# Initialize DVC (already done in this repo)
+# dvc init
+
+# Track your dataset
+dvc add data/hazelnut
+
+# Commit the .dvc file to Git
+git add data/hazelnut.dvc .gitignore
+git commit -m "Add dataset tracking via DVC"
+```
+
 ---
 
 ## 📂 Project Structure

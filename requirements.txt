@@ -17,3 +17,6 @@ openvino
 fastapi
 uvicorn
 python-multipart
+
+# Data Versioning
+dvc

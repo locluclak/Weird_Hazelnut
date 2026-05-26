@@ -5,7 +5,7 @@
 # ==============================================================================
 data:
   name: hazelnut
-  root: ../hazelnut
+  root: ./data/hazelnut
   normal_dir: train/good
   normal_test_dir: test/good
   abnormal_dir:
