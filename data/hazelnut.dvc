@@ -1,0 +1,6 @@
+outs:
+- md5: a7150856e111ff73d8bc6bdda28bbcab.dir
+  size: 617585949
+  nfiles: 573
+  hash: md5
+  path: hazelnut
